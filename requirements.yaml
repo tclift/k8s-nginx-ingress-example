@@ -1,0 +1,11 @@
+---
+dependencies:
+- name: nginx-ingress
+  version: ^0.22.0
+  repository: https://kubernetes-charts.storage.googleapis.com/
+- name: cert-manager
+  version: ^0.3.2
+  repository: https://kubernetes-charts.storage.googleapis.com/
+- name: external-dns
+  version: ^0.6.1
+  repository: https://kubernetes-charts.storage.googleapis.com/

@@ -1,0 +1,26 @@
+---
+nginx-ingress:
+#  controller:
+#    service:
+#      loadBalancerIP: 1.2.3.4
+    publishService:
+      # without this, the Ingress resources are given an external IP (we only want the Ingress Controller to have one)
+      enabled: true
+
+cert-manager:
+  ingressShim:
+    defaultIssuerName: letsencrypt-prod
+    defaultIssuerKind: ClusterIssuer
+
+letsencrypt:
+  server: https://acme-v02.api.letsencrypt.org/directory
+  email: you@example.org
+
+external-dns:
+  provider: google
+  rbac:
+    create: 'true'
+  txtOwnerId: mycluster
+  # uncomment to have external-dns log which records it wants to change
+#  extraArgs:
+#    dry-run:
