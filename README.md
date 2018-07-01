@@ -34,13 +34,13 @@ Add your Let's Encrypt private key to a Secret called `letsencrypt-private-key`.
       --from-file=tls.key="~/.lego/accounts/acme-v02.api.letsencrypt.org/you@example.org/keys/you@example.org.key"
 
 
-# external-dns
+## external-dns
 
 In `values.yaml`, `external-dns.txtOwnerId` is used as a check to ensure `external-dns` doesn't change records it's not
 supposed to.
 
 
-# Hello World service
+## Hello World service
 
 This sets up a 'Hello World' web server using the `nginxdemos/hello` image.
 
@@ -66,12 +66,12 @@ disable the `HttpLoadBalancing` addon.
           --num-nodes 1 \
           --disk-size 20 \
           --scopes="https://www.googleapis.com/auth/devstorage.read_only,\
-https://www.googleapis.com/auth/logging.write,\
-https://www.googleapis.com/auth/monitoring,\
-https://www.googleapis.com/auth/ndev.clouddns.readwrite,\
-https://www.googleapis.com/auth/service.management.readonly,\
-https://www.googleapis.com/auth/servicecontrol,\
-https://www.googleapis.com/auth/trace.append" \
+        https://www.googleapis.com/auth/logging.write,\
+        https://www.googleapis.com/auth/monitoring,\
+        https://www.googleapis.com/auth/ndev.clouddns.readwrite,\
+        https://www.googleapis.com/auth/service.management.readonly,\
+        https://www.googleapis.com/auth/servicecontrol,\
+        https://www.googleapis.com/auth/trace.append" \
           --addons=HttpLoadBalancing=DISABLED
 
  2. [Install Helm and Tiller](https://github.com/kubernetes/helm/blob/master/docs/install.md)
